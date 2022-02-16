@@ -1,0 +1,219 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #0f2344;
+    padding: 1em;
+}
+.corona{
+    width: 8em;
+    height: 2em;
+    padding-left: 100px;
+
+}
+ul{
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0px;
+}
+a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 60px;
+    float: right;
+}
+a:hover{
+    color: #237f4c;
+}
+header{
+    width: 100%;
+    height: 600px;
+    background-image:url(images/7685299header.jpg);
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding:5em 0em 0px 0em;
+}
+header .c19{
+    padding-left: 10em;
+}
+header h3{
+    margin-top: 0px;
+    color: rgb(77, 209, 132);
+    font-size: 30px;
+}
+header h2{
+    font-size: 40px;
+}
+header p{
+    font-size: 15px;
+}
+#cl{
+    font-size:17px;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #5bf1a4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 0px;
+    cursor: pointer;
+}
+#cl:hover{
+    background-color: #237f4c;
+    color: white;
+
+}
+.men{
+    width: 700px;
+    height: 30em;
+    position:relative;
+    padding-right: 10em;
+}
+main{
+    margin: 10em;
+    text-align:center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
+}
+main p{
+    color: rgb(109, 106, 106);
+    
+}
+.virus{
+    margin-top: 5%;
+}
+.vir1{
+    width: 380px;
+    display: inline-block;
+    margin: 30px;
+}
+.cor{
+    margin-left: 10%;
+    margin-top: 8%;
+    margin-bottom: 10em;
+}
+.dw{
+    display: inline-block;
+    
+}
+.dw2{
+    text-align:left;
+    width: 40%;
+}
+#p2{
+    margin-left: 40%;
+    margin-top: -400px;
+}
+.blue{
+    background-color: #0f2344;
+    padding:0.1px 30px 90px 30px;
+}
+.wit{
+    color: white;
+}
+.ps{
+    height: 350px;
+    width: 350px;
+    display: inline-block;
+    margin: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+.marg{
+    margin-top: 10%;
+}
+.gr{
+    background-color: #f6f7fb;
+    width: 100%;
+}
+#tab1,#tab2{
+    display: inline-block;
+    flex-direction: row;
+}
+#tab1,#tab2 td{
+    padding:40px 80px 40px 80px;
+}
+#tab2 p{
+    margin:0px;
+    padding:0px;
+    color: gray;
+}
+#tab2 h3{
+    margin:0px;
+    padding:0px;
+}
+.pre{
+    margin-top: 8%;
+}
+.vir2{
+    margin: 20px;
+    width: 260px;
+    display: inline-block;
+}
+.vir2 h2{
+    font-size: 20px;
+
+}
+.inp{
+    height: 700px;
+    background-color: #f6f7fb;
+    margin-top:90px;
+    padding-left:7em;
+}
+.head{
+    padding-top:3em;
+    padding-bottom:1em;
+}
+.tab2{
+    width: 100%;
+    border-spacing: 15px;
+    margin: 0px;
+    
+}
+.inp2{
+    width: 500px;
+    height: 25px;
+    border: 2px solid;
+    color: #e6e7eb;
+    border-radius: 5px;
+}
+textarea{
+    border: 2px solid;
+    color: #e6e7eb;
+    border-radius: 5px;
+}
+#cl2{
+    font-size:17px;
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #5bf1a4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 0px;
+    cursor: pointer;
+}
+#cl2:hover{
+    background-color: #237f4c;
+    color: white;
+}
+.inp p{
+    text-align: left;
+}
+.inp span{
+    color: red;
+}
+.input-file{
+    padding:10em;
+    background-color: red;
+    border: 10px solid red;
+
+}
