@@ -15,26 +15,28 @@
     <header class="first_header">
         <div class="first_background">
             <nav class="nav_1">
-                <div>
-                    <button class="circle-button">
-                        <ion-icon name="time-outline"></ion-icon>
-                    </button>
-                </div>
-                <div class="left">
-                    <h6>Heure d'ouverture</h6>
-                    <a href="#">Lun a Ven : 9H a 19H</a>
-                    <a href="#">Sam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 9H a 14H</a>
-                </div>
-                <div>
-                    <button class="circle-button">
-                        <ion-icon name="call"></ion-icon>
-                    </button>
-                </div>
-                <div class="right">
-                    <h6>Support Clients</h6>
-                    <a class="tel" href="tel:0535612288">0535612288</a> / <a class="tel"
-                        href="tel:0600795447">0600795447</a><br>
-                    <a href="mailto:tareksoft.medsoft@gmail.com">tareksoft.medsoft@gmail.com</a>
+                <div class="leftdiv">
+                    <div id="first">
+                        <button class="circle-button">
+                            <ion-icon name="time-outline"></ion-icon>
+                        </button>
+                    </div>
+                    <div class="left">
+                        <h6>Heure d'ouverture</h6>
+                        <a href="#">Lun a Ven : 9H a 19H</a>
+                        <a href="#">Sam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 9H a 14H</a>
+                    </div>
+                    <div>
+                        <button class="circle-button">
+                            <ion-icon name="call"></ion-icon>
+                        </button>
+                    </div>
+                    <div class="right">
+                        <h6>Support Clients</h6>
+                        <a class="tel" href="tel:0535612288">0535612288</a> / <a class="tel"
+                            href="tel:0600795447">0600795447</a><br>
+                        <a href="mailto:tareksoft.medsoft@gmail.com">tareksoft.medsoft@gmail.com</a>
+                    </div>
                 </div>
                 <div class="rightdiv">
                     <div>
@@ -53,8 +55,11 @@
                         </button>
                     </div>
                     <div>
-                        <button class="devibtn">Devis <div><ion-icon name="arrow-forward-circle-outline"></ion-icon>
-                            </div></button>
+                        <button class="devibtn">Devis
+                            <div>
+                                <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                            </div>
+                        </button>
                     </div>
                 </div>
             </nav>
@@ -62,27 +67,35 @@
     <header class="second_header">
         <h2 class="logo">Tarek Soft</h2>
         <nav class="nav">
-            <a href="/" class="accueil">Accueil</a>
-            <a href="#">Boutique</a>
-            <a href="#">Téléchargement</a>
-            <a href="#">Vidéos</a>
-            <a href="#">Connexion</a>
-            <button class="btnlogin" id="loginBtn">
-                Login
-                <span></span><span></span><span></span><span></span>
-            </button>
+            <div class="nav_a">
+                <a href="/" class="accueil">Accueil</a>
+                <a href="#">Boutique</a>
+                <a href="#">Téléchargement</a>
+                <a href="#">Vidéos</a>
+                <a href="#">Connexion</a>
+                <button class="btnlogin" id="loginBtn">
+                    Login
+                    <span></span><span></span><span></span><span></span>
+                </button>
+            </div>
+            <button id="dropbtn"><ion-icon name="menu"></ion-icon></button>
         </nav>
-        </div>
-        </div>
     </header>
+    <div id="liste" class="content">
+        <a href="/" class="accueil">Accueil</a>
+        <a href="#">Boutique</a>
+        <a href="#">Téléchargement</a>
+        <a href="#">Vidéos</a>
+        <a href="#" class="cnxclassbtn" id="cnxidbtn">Connexion</a>
+    </div>
     <div class="wrapper" id="mywrapper">
-        <img class="wrapperimage" src="bgimage.jpg" alt="Transparent Image">
+        <img class="wrapperimage" src="/images/bgimage.jpg" alt="Transparent Image">
         <span class="icon-close">
             <ion-icon name="close"></ion-icon>
         </span>
         <div class="form-box login">
             <h2>Connexion</h2>
-            <form method="POST" action="{{ route('utilisateurs.store') }}" id="myForm">
+            <form method="POST" action="{{ route('login') }}" id="myForm">
                 @csrf
                 <div class=input-box>
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
@@ -91,11 +104,11 @@
                 </div><br>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required name="pass" id="pass">
-                    <label for="pass">Mot de passe</label>
+                    <input type="password" required name="password" id="password">
+                    <label for="password">Mot de passe</label>
                 </div>
                 <div class="remember-forgot">
-                    <label><input type="checkbox" name="remember" id="remember">Remember Me</label>
+                    <label><input type="checkbox" name="remember" id="remember_me">Remember Me</label>
                     <a href="#">Mot de passe oublié ?</a>
                 </div>
                 <button type="submit" value="Animate Me" class="btn" onclick="validateInput()">utilisateur</button>
@@ -108,12 +121,12 @@
 
         <div class="form-box register">
             <h2>Inscrire</h2>
-            <form method="POST" action="{{ route('utilisateurs.store') }}" id="myForm">
+            <form method="POST" action="{{ route('register') }}" id="myForm">
                 @csrf
                 <div class=input-box>
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
-                    <input type="text" required name="username" id="username" autocomplete="username">
-                    <label for="username">utilisateur</label>
+                    <input type="text" required name="name" id="name" autocomplete="name">
+                    <label for="name">utilisateur</label>
                 </div><br>
 
                 <div class=input-box>
@@ -130,8 +143,8 @@
 
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required name="pass" id="pass">
-                    <label for="pass">mot de passe</label>
+                    <input type="password" required name="password" id="password">
+                    <label for="password">mot de passe</label>
                 </div>
                 <div class="remember-forgot">
                     <label><input type="checkbox" name="remember" id="remember">J'accepte les termes et
@@ -147,38 +160,68 @@
 
     </div>
     <div id="slideshow-container">
-        <main class="show">
+        <main class="show" id="idshow">
             <h3>Gagner du Temps</h3>
             <h1>Med Soft Pro</h1>
             <p>Un Progiciel qui va vous faire gagnez énormément du temps grâce a ces modules préétablis. Chaque
                 spécialité englobe différentes types de modules prés pour l'utilisation. Fini les tracas liés à la
                 gestion de votre Cabinet. Med Soft Pro s'occupe de tout !</p>
-            <button>Acheter<ion-icon name="arrow-forward-circle"></ion-icon></button>
-            <button>Devis <ion-icon name="arrow-forward-circle"></ion-icon></button>
+            <div class="show-container_btn1">
+                <button class="divbtn">Acheter
+                    <div>
+                        <ion-icon name="arrow-forward-circle"></ion-icon>
+                    </div>
+                </button>
+                <button class="divbtn2">Devis
+                    <div>
+                        <ion-icon name="arrow-forward-circle"></ion-icon>
+                    </div>
+                </button>
+            </div>
         </main>
-        <main>
+        <main id="idshow">
             <h3>Informatiser votre pratique</h3>
             <h1>Grande Facilité pour informatiser votre pratique</h1>
             <p>Grande Facilité pour informatiser votre pratique</p>
-            <button>Acheter<ion-icon name="arrow-forward-circle"></ion-icon></button>
-            <button>Devis <ion-icon name="arrow-forward-circle"></ion-icon></button>
+            <div class="show-container_btn1">
+                <button class="divbtn">Acheter
+                    <div>
+                        <ion-icon name="arrow-forward-circle"></ion-icon>
+                    </div>
+                </button>
+                <button class="divbtn2">Devis
+                    <div>
+                        <ion-icon name="arrow-forward-circle"></ion-icon>
+                    </div>
+                </button>
+            </div>
         </main>
-        <main>
+        <main id="idshow">
             <h3>Connexion a distance</h3>
             <h1>Med Soft assure une connexion à distance</h1>
             <p>Med Soft vous assure une connexion à distance en permanence a votre base des données, vous pouvez suivre
                 les dossiers médicaux de vos patients n'importe où , que ce soit avec votre Smartphone votre tablette ou
                 votre ordinateur.</p>
-            <button>Acheter<ion-icon name="arrow-forward-circle"></ion-icon></button>
-            <button>Devis <ion-icon name="arrow-forward-circle"></ion-icon></button>
+            <div class="show-container_btn1">
+                <button class="divbtn">Acheter
+                    <div>
+                        <ion-icon name="arrow-forward-circle"></ion-icon>
+                    </div>
+                </button>
+                <button class="divbtn2">Devis
+                    <div>
+                        <ion-icon name="arrow-forward-circle"></ion-icon>
+                    </div>
+                </button>
+            </div>
         </main>
     </div>
-    <div class="background-image" id="slideshow"></div><br>
+    <div class="background-image" id="slideshow"></div>
     <div class="wrapper_second">
         <div class="container" id="c3">
             <div class="image" id="i2">
                 <div class="city">
-                    <img class="card__img_second" src="backup.ico" alt="Snowy Mountains">
+                    <img class="card__img_second" src="/images/backup.ico" alt="Snowy Mountains">
                 </div>
             </div>
             <div class="story" id="s0">
@@ -201,7 +244,7 @@
         <div class="container" id="c2">
             <div class="image" id="i2">
                 <div class="city">
-                    <img class="card__img_second" src="CHIRURGIEN.ico" alt="Snowy Mountains">
+                    <img class="card__img_second" src="/images/CHIRURGIEN.ico" alt="Snowy Mountains">
                 </div>
             </div>
             <div class="story" id="s1">
@@ -224,7 +267,7 @@
         <div class="container" id="c0">
             <div class="image" id="i2">
                 <div class="city">
-                    <img class="card__img_second" src="phone-desktop.ico" alt="Snowy Mountains">
+                    <img class="card__img_second" src="/images/phone-desktop.ico" alt="Snowy Mountains">
                 </div>
             </div>
             <div class="story" id="s2">
@@ -248,7 +291,7 @@
         <div class="container" id="c1">
             <div class="image" id="i2">
                 <div class="city">
-                    <img class="card__img_second" src="web-security.ico" alt="Snowy Mountains">
+                    <img class="card__img_second" src="/images/web-security.ico" alt="Snowy Mountains">
                 </div>
             </div>
             <div class="story" id="s3">
@@ -273,7 +316,7 @@
     </div>
     </main>
     <div class="head_main_div">
-        <h3 class="first_h3">Fonctionnalités </h3>
+        <h3 class="first_h3">Fonctionnalités&nbsp;</h3>
         <h3 class="second_h3">Med Soft Pro</h3>
     </div>
     <div class="third_container">
@@ -285,8 +328,8 @@
                     </span>
                 </div>
                 <div class="div_third_h3">
+                    <h3>Données Simplifies</h3>
                 </div>
-                <h3>Données Simplifies</h3>
                 <div class="div_third_p">
                     <p>Les données relatives à l'activité médicale sont nombreuses (dossiers administratifs,
                         rendez-vous, soins, prescriptions, mesures ... ). med Soft s'efforce de simplifier au maximum
@@ -395,8 +438,34 @@
             </div>
         </div>
     </div>
-    <footer>
-
+    <footer class="page_footer">
+        <div class="footer" id="footer1">
+            <div class="footer_btn1">
+                <button class="footer_circle-button">
+                    <ion-icon name="call"></ion-icon>
+                </button>
+            </div>
+        </div>
+        <div class="footer" id="footer2">
+            <div class="footer_h3_a">
+                <h3>
+                    24X7 Support clients
+                </h3>
+                <a class="footer_tel" href="tel:0535612288">(+212) 5 35 61 22 88</a>
+            </div>
+        </div>
+        <div class="footer" id="footer3">
+            <div class="footer_h5">
+                <h5>
+                    Copyright © 2023 Tarek Soft
+                </h5>
+            </div>
+        </div>
+        <div class="footere" id="footer4">
+            <button class="footer_btnup" aria-label="scrollingUp">
+                <ion-icon name="chevron-up-circle-outline"></ion-icon>
+            </button>
+        </div>
     </footer>
     <script src="javascript.js"></script>
     <!-- <script src="{{ asset('/script.js') }}"></script> -->
