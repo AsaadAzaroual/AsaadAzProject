@@ -96,7 +96,7 @@
         <div class="form-box login">
             <h2>Connexion</h2>
             <form method="POST" action="{{ route('login') }}" id="myForm">
-                @csrf
+                <!-- @csrf -->
                 <div class=input-box>
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
                     <input type="text" required name="email" id="email">
@@ -122,7 +122,7 @@
         <div class="form-box register">
             <h2>Inscrire</h2>
             <form method="POST" action="{{ route('register') }}" id="myForm">
-                @csrf
+                <!-- @csrf -->
                 <div class=input-box>
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
                     <input type="text" required name="name" id="name" autocomplete="name">
