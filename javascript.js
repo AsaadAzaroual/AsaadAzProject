@@ -109,7 +109,7 @@ function stopSlideshow() {
 
 startSlideshow();
 
-var images = ['/images/img01.jpg', '/images/img02.jpg', '/images/img03.jpg'];
+var images = ['img01.jpg', 'img02.jpg', 'img03.jpg'];
 var CurrentIndex = 0;
 
 function changeImage() {
