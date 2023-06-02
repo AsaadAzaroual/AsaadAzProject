@@ -1436,7 +1436,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(/images/imgbox1.jpg);
+  background-image: url(imgbox1.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1459,7 +1459,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(/images/imgbox2.jpg);
+  background-image: url(imgbox2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1482,7 +1482,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(/images/imgbox3.jpg);
+  background-image: url(imgbox3.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1504,7 +1504,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(/images/imgbox4.jpg);
+  background-image: url(imgbox4.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1526,7 +1526,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(/images/imgbox5.jpg);
+  background-image: url(imgbox5.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1548,7 +1548,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(/images/imgbox6.jpg);
+  background-image: url(imgbox6.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
