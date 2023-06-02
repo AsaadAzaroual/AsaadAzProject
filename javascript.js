@@ -12,7 +12,7 @@ document.getElementById('myForm').addEventListener('submit', function (event) {
 });
 
 const input1 = document.getElementById('email');
-const input2 = document.getElementById('pass');
+const input2 = document.getElementById('password');
 const btnElement = document.querySelector('.btn');
 const wrapper = document.querySelector('.wrapper');
 
@@ -29,26 +29,34 @@ function checkInputsValidity() {
     }
 }
 
-// const iconclose = document.querySelector('.icon-close');
+const btnlogin = document.querySelector('.btnlogin');
+const cnxclassbtn = document.querySelector('.cnxclassbtn');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
-const btnlogin = document.querySelector('.btnlogin');
-// iconclose.addEventListener('click', () => {
-//     wrapper.classList.remove('active-popup');
-// });
-registerLink.addEventListener('click', () => {
-    wrapper.classList.add('active');
-    wrapper.style.height = '540px';
+const iconclose = document.querySelector('.icon-close');
 
+
+btnlogin.addEventListener('click', () => {
+    wrapper.classList.add('active-popup');
+    btnlogin.classList.add('active-btnlogin');
+});
+cnxclassbtn.addEventListener('click', () => {
+    wrapper.classList.add('active-popup');
 });
 loginLink.addEventListener('click', () => {
     wrapper.classList.remove('active');
     wrapper.style.height = '440px';
 });
-btnlogin.addEventListener('click', () => {
-    wrapper.classList.add('active-popup');
-    btnlogin.classList.add('active-btnlogin');
-
+registerLink.addEventListener('click', () => {
+    wrapper.classList.add('active');
+    wrapper.style.height = '540px';
+});
+iconclose.addEventListener('click', () => {
+    wrapper.classList.remove('active-popup');
+    wrapper.classList.remove('active');
+    btnlogin.classList.remove('active-btnlogin');
+    FormContainer.style.width = '0';
+    FormContainer.style.height = '0';
 });
 
 const loginBtn = document.getElementById('loginBtn');
@@ -65,35 +73,18 @@ loginFormContainer.addEventListener('click', function (e) {
 });
 
 const Btn = document.getElementById('loginBtn');
+const cnxidbtn = document.getElementById('cnxidbtn');
 const FormContainer = document.getElementById('mywrapper');
-const iconclose = document.querySelector('.icon-close');
 
 Btn.addEventListener('click', function () {
     FormContainer.style.width = '400px';
     FormContainer.style.height = '440px';
 });
-iconclose.addEventListener('click', () => {
-    wrapper.classList.remove('active-popup');
-    btnlogin.classList.remove('active-btnlogin');
-    FormContainer.style.width = '0';
-    FormContainer.style.height = '0';
+cnxidbtn.addEventListener('click', function () {
+    FormContainer.style.width = '400px';
+    FormContainer.style.height = '440px';
 });
-// FormContainer.addEventListener('mouseover', () => {
-//     FormContainer.style.width = '500px';
-//     FormContainer.style.height = '540px';
-// });
 
-// FormContainer.addEventListener('mouseout', () => {
-//     FormContainer.style.width = '400px';
-//     FormContainer.style.height = '440px';
-// });
-
-// FormContainer.addEventListener('click', function (e) {
-//     if (e.target === FormContainer) {
-//         FormContainer.style.width = '0';
-//         FormContainer.style.height = '0';
-//     }
-// });
 
 const mainSections = document.querySelectorAll('main');
 let currentIndex = 0;
@@ -108,9 +99,17 @@ function showNextSection() {
 
 mainSections[currentIndex].style.display = 'block';
 
-setInterval(showNextSection, 5000);
+function startSlideshow() {
+    slideshowInterval = setInterval(showNextSection, 5000);
+}
 
-var images = ['img01.jpg', 'img02.jpg', 'img03.jpg'];
+function stopSlideshow() {
+    clearInterval(slideshowInterval);
+}
+
+startSlideshow();
+
+var images = ['/images/img01.jpg', '/images/img02.jpg', '/images/img03.jpg'];
 var CurrentIndex = 0;
 
 function changeImage() {
@@ -122,18 +121,66 @@ function changeImage() {
         CurrentIndex = 0;
     }
 }
+function startImageChange() {
+    imageInterval = setInterval(changeImage, 5000);
+}
+
+function stopImageChange() {
+    clearInterval(imageInterval);
+}
+
+startImageChange();
+
+var div = document.getElementById('slideshow-container');
+
+div.addEventListener('mouseover', function () {
+    stopImageChange();
+    stopSlideshow();
+});
+
+div.addEventListener('mouseout', function () {
+    startImageChange();
+    startSlideshow();
+});
 
 changeImage();
 
-setInterval(changeImage, 5000);
+if (window.matchMedia('(min-width: 800px)').matches) {
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('.second_header');
+        var scrollPosition = window.scrollY || window.pageYOffset;
 
-window.addEventListener('scroll', function () {
-    var header = document.querySelector('.second_header');
-    var scrollPosition = window.scrollY;
+        if (scrollPosition > 100) {
+            header.classList.add('fixed');
+        } else {
+            header.classList.remove('fixed');
+        }
+    });
+}
 
-    if (scrollPosition > 100) {
-        header.classList.add('fixed');
-    } else {
-        header.classList.remove('fixed');
-    }
+const btnUp = document.querySelector('.footer_btnup');
+
+
+btnUp.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    var showButton = document.getElementById("dropbtn");
+    var linkList = document.getElementById("liste");
+
+    showButton.addEventListener("click", function () {
+        linkList.style.display = "block";
+    });
+
+    document.addEventListener("click", function (event) {
+        var targetElement = event.target;
+
+        if (!showButton.contains(targetElement) && !linkList.contains(targetElement)) {
+            linkList.style.display = "none";
+        }
+    });
 });
